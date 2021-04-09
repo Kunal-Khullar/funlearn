@@ -1,0 +1,20 @@
+.navlink{
+    margin-left: 10vh;
+   
+}
+.navbar-light .navbar-nav .nav-link{
+    color: white;
+}
+.navbar{
+    background-color: #35375E;
+    
+}
+.navbar-light .navbar-brand{
+    color: white;
+}
+button{
+    /* font-size: 1.2rem; */
+    width:6rem;
+    /* height: 3rem; */
+    border-radius: 15px !important;
+}
