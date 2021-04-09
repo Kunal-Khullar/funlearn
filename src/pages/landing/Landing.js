@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Mynav from "../../components/navbar/Mynav";
 import "./Landing.css";
-import Footer from "../../components/footer/Footer";
 import { Row, Col, Button, Modal } from "react-bootstrap";
 const Landing = () => {
     const [lgShow, setLgShow] = useState(false);
@@ -166,7 +165,7 @@ const Landing = () => {
                         </Col>
                     </Row>
                 </div>
-                <Footer />
+
             </div>
 
         </div>
