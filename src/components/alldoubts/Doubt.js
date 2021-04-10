@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./doubt.css";
 import { Row, Col, Button } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { db } from "../../firebase";
+import { useHistory } from "react-router-dom";
+import { UserContext } from "../../context/UserContext";
 
 AOS.init();
 const Doubt = () => {
+  const history = useHistory();
+  const { user } = useContext(UserContext);
   const [loading, setLoading] = useState(true);
   const [doubts, setDoubts] = useState([]);
   useEffect(() => {
@@ -38,7 +42,12 @@ const Doubt = () => {
                 <h4>{ele.uid}</h4>
               </Row>
               <p>{ele.description}</p>
-              <Button onClick={() => {}} className="mybtn">
+              <Button
+                onClick={() => {
+                  history.push("/profile/" + user.email);
+                }}
+                className="mybtn"
+              >
                 Contact
               </Button>
             </div>

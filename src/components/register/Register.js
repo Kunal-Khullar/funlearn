@@ -13,6 +13,7 @@ const Register = () => {
   const [interests, setInterests] = useState("");
   const registeruser = async () => {
     if (name1 != "" && email != "" && password != "") {
+      var uid = "";
       if (
         password.length > 5 &&
         email.includes("@") &&
@@ -28,10 +29,22 @@ const Register = () => {
               interest: interests,
             });
           }
-
-          history.push("/home");
         } catch (err) {
           alert(err);
+        }
+        try {
+          if (await auth.signInWithEmailAndPassword(email, password)) {
+            var user = fireapp.auth().currentUser;
+            if (user != null) {
+              uid = user.email;
+              localStorage.setItem("currentUser", uid);
+
+              console.log(localStorage.getItem("currentUser"));
+              history.push("/home");
+            }
+          }
+        } catch (error) {
+          alert(error);
         }
       }
     } else {
