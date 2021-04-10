@@ -2,6 +2,9 @@ import React,{useState} from "react";
 import "./register.css";
 import { Form, Button } from "react-bootstrap";
 // import {fireapp,auth,db} from '../../firebase'
+const abc = () =>{
+  
+}
 const Register = () => {
   console.log("gg")
     const [name1,setName]=useState("")
