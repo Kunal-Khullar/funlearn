@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+.profile_section {
+  background: #a8c0ff; /* fallback for old browsers */
+  /* background: -webkit-linear-gradient(to left, #3f2b96, #a8c0ff);  Chrome 10-25, Safari 5.1-6 */
+  background: snow; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 85vh;
+  padding: 1rem;
+}
+.profile_section h2 {
+  font-size: 3rem;
+  font-family: "Poppins";
+  font-weight: 200;
+  color: #46537f;
+  text-shadow: 1px 1px 2px;
+  padding: 0.6rem 2rem;
+}
+.profile_section h5 {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: baseline;
+  color: #161b82;
+  font-family: "Varela Round";
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+.profile_section h6 {
+  font-size: 1.3rem;
+  color: #5d5b86;
+  padding-left: 1rem;
+}
+.mybtn2 {
+  /* width: 9rem !important; */
+  width: 10rem;
+  height: 3rem;
+  /* border-radius: none !important; */
+  border: 2px solid #35375e;
+  color: #35375e;
+  background: transparent;
+  font-size: 1.2rem;
+  margin: 2rem;
+  transition: background-color 500ms ease-in-out;
+}
+.mybtn2:hover {
+  background-color: #35375e;
+  color: snow;
+  border: inherit;
+}
+.allfeed {
+  height: 55vh;
+  background: #35375e;
+
+  border-radius: 1rem;
+  /* box-shadow: 1px 1px 9px -3px #4b5082; */
+}
+.feedback {
+  justify-content: center;
+  width: 75%;
+  margin-left: 2rem;
+}
+.carousel-indicators {
+  display: none !important;
+}
+#right {
+  padding-left: 4rem;
+}
+.allfeed h3 {
+  color: snow !important;
+  font-family: "Varela Round";
+  font-size: 1.3rem !important;
+  padding: 2.5rem 6rem;
+  padding-bottom: 0.3rem;
+}
+.allfeed p {
+  font-size: 0.8rem;
+  text-align: justify;
+  padding: 0rem 6rem;
+  color: snow;
+  font-family: "Poppins";
+  font-weight: 100;
+  letter-spacing: 1px;
+  line-height: 1.4rem;
+}
+.doubt_coach {
+  background: #141e30; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #243b55,
+    #141e30
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #243b55,
+    #141e30
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+#myimg1 {
+  width: 60%;
+}
+.opt1 {
+  width: 70%;
+  padding: 1rem;
+  margin-left: 0;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  background-color: white;
+  margin-bottom: 1rem;
+  box-shadow: 0.5px 0.5px 15px -3px #7879a4;
+}
+.doubt_coach h2 {
+  font-size: 2rem;
+  font-family: "Dela Gothic One";
+  letter-spacing: 2px;
+}
+.doubt_coach p {
+  color: #5a60a5;
+  padding-top: 1rem;
+}
+.doubt_coach button {
+  margin-left: -0.1rem;
+}
+.rights {
+  margin-left: -1.5rem;
+}
+.opt2 {
+  width: 70%;
+  padding: 1rem;
+  margin-left: 30%;
+  margin-top: 2rem;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  background-color: white;
+
+  box-shadow: 0.5px 0.5px 15px -3px #7879a4;
+}
