@@ -21,9 +21,6 @@ const Home = () => {
   const [coach, setCoach] = useState(0);
   const [socketId, setSocketId] = useState("");
   useEffect(() => {
-    socket.on("me", (id) => setSocketId(id));
-  }, []);
-  useEffect(() => {
     db.collection(params.id)
       .doc("profile")
       .get()
@@ -33,6 +30,7 @@ const Home = () => {
         setEdu(doc.data().qualify);
         setField(doc.data().interest);
         setCoach(doc.data().creds);
+        setSocketId(doc.data().socketId);
       });
   }, [params]);
   return (

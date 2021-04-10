@@ -27,6 +27,7 @@ const Register = () => {
               phone: mobile,
               qualify: qualifications,
               interest: interests,
+              socketId: "",
             });
           }
         } catch (err) {

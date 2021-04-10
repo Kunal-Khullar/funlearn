@@ -10,15 +10,15 @@ import Doubt from "../../components/alldoubts/Doubt";
 import { useHistory } from "react-router-dom";
 import { io } from "socket.io-client";
 import { UserContext } from "../../context/UserContext";
-import 'date-fns';
-import Grid from '@material-ui/core/Grid';
-import DateFnsUtils from '@date-io/date-fns';
+import "date-fns";
+import Grid from "@material-ui/core/Grid";
+import DateFnsUtils from "@date-io/date-fns";
 import {
   MuiPickersUtilsProvider,
   KeyboardTimePicker,
   KeyboardDatePicker,
-} from '@material-ui/pickers';
-const socket = io("http://localhost:5000");
+} from "@material-ui/pickers";
+const socket = io("https://video-chat-app-hack36.herokuapp.com/");
 
 AOS.init();
 
@@ -33,18 +33,26 @@ const Home = () => {
   const [coach, setCoach] = useState(0);
   const [rating, setRating] = useState(null);
   const [socketId, setSocketId] = useState("");
-  const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
+  const [selectedDate, setSelectedDate] = React.useState(
+    new Date("2014-08-18T21:11:54")
+  );
 
-  const [time,setTime]=useState("");
-  const [date,setDate]=useState("");
+  const [time, setTime] = useState("");
+  const [date, setDate] = useState("");
   const handleDateChange = (date) => {
     setSelectedDate(date);
     console.log(date);
-    console.log(Date.now())
-  }
+    console.log(Date.now());
+  };
+  const updateSocketId = async (id) => {
+    await db.collection(user.email).doc("profile").update({ socketId: id });
+  };
   useEffect(() => {
-    socket.on("me", (id) => setSocketId(id));
-  }, []);
+    socket.on("me", (id) => {
+      setSocketId(id);
+      updateSocketId(id);
+    });
+  }, [user]);
   useEffect(() => {
     db.collection(localStorage.getItem("currentUser"))
       .doc("profile")
@@ -73,33 +81,33 @@ const Home = () => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        <MuiPickersUtilsProvider utils={DateFnsUtils}>
-      <Grid container justify="space-around">
-        <KeyboardDatePicker
-          disableToolbar
-          variant="inline"
-          format="MM/dd/yyyy"
-          margin="normal"
-          id="date-picker-inline"
-          label="Date picker inline"
-          value={selectedDate}
-          onChange={handleDateChange}
-          KeyboardButtonProps={{
-            'aria-label': 'change date',
-          }}
-        />
-        <KeyboardTimePicker
-          margin="normal"
-          id="time-picker"
-          label="Time picker"
-          value={selectedDate}
-          onChange={handleDateChange}
-          KeyboardButtonProps={{
-            'aria-label': 'change time',
-          }}
-        />
-      </Grid>
-    </MuiPickersUtilsProvider>
+          <MuiPickersUtilsProvider utils={DateFnsUtils}>
+            <Grid container justify="space-around">
+              <KeyboardDatePicker
+                disableToolbar
+                variant="inline"
+                format="MM/dd/yyyy"
+                margin="normal"
+                id="date-picker-inline"
+                label="Date picker inline"
+                value={selectedDate}
+                onChange={handleDateChange}
+                KeyboardButtonProps={{
+                  "aria-label": "change date",
+                }}
+              />
+              <KeyboardTimePicker
+                margin="normal"
+                id="time-picker"
+                label="Time picker"
+                value={selectedDate}
+                onChange={handleDateChange}
+                KeyboardButtonProps={{
+                  "aria-label": "change time",
+                }}
+              />
+            </Grid>
+          </MuiPickersUtilsProvider>
           <Doubt />
         </Modal.Body>
       </Modal>
@@ -164,32 +172,25 @@ const Home = () => {
             data-aos-duration="1000"
             data-aos-easing="ease-in-out-cubic"
           >
-           
             <h5>Your Sessions{rating}</h5>
             <div className="feedback">
               <Carousel>
                 <Carousel.Item>
                   <div className="allfeed">
                     <h3>Date</h3>
-                    <p>
-                     Topic
-                    </p>
+                    <p>Topic</p>
                   </div>
                 </Carousel.Item>
                 <Carousel.Item>
                   <div className="allfeed">
                     <h3>Date</h3>
-                    <p>
-                      Topic
-                    </p>
+                    <p>Topic</p>
                   </div>
                 </Carousel.Item>
                 <Carousel.Item>
                   <div className="allfeed">
                     <h3>Date</h3>
-                    <p>
-                     Topic
-                    </p>
+                    <p>Topic</p>
                   </div>
                 </Carousel.Item>
               </Carousel>
