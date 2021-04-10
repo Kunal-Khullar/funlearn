@@ -3,7 +3,7 @@ import Mynav from "../../components/navbar/Mynav";
 import "./landing.css";
 import { Row, Col, Button, Modal } from "react-bootstrap";
 import Footer from '../../components/footer/Footer'
-import Login from '../../components/login/Login'
+import Register from '../../components/register/Register'
 import gifImage from "./learning.gif";
 const Landing = () => {
   return (

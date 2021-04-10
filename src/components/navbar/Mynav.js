@@ -24,7 +24,7 @@ const Mynav = () => {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-         <Login></Login>
+         {/* <Login></Login> */}
          {/* <Register/> */}
           </Modal.Body>
         </Modal>

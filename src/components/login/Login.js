@@ -4,10 +4,11 @@ import { Form, Button } from "react-bootstrap";
 // import {fireapp,auth,db} from '../../firebase'
 import {useHistory } from 'react-router-dom'
 const Login = () => {
+ 
+  var uid="";
   const history = useHistory();
   const [logemail,setLogEmail] = useState("")
   const [logpass,setLogPass] = useState("")
-  var uid="";
   const loginuser = async () =>{
     console.log(logemail,logpass)
   }
