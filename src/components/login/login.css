@@ -1,0 +1,20 @@
+.form-container{
+ width: 90%;
+ margin: auto;
+ margin: 1rem;
+}
+.mybtn{
+    background: #35375E !important;
+    color: snow !important;
+    width: 8rem !important;
+    border: 10px !important;
+    height: 2.6rem !important;
+    font-size: 1.1rem;
+    align-items: center !important;
+    margin: 1rem 0 1rem 18rem;
+}
+.mybtn:hover{
+    background: snow!important;
+    color: #35375E !important;
+    border: 1px solid #35375E !important;
+}
