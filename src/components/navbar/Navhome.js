@@ -3,7 +3,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Button from 'react-bootstrap/Button'
 import './navhome.css'
-const Navhome = () => {
+const Navhome = (props) => {
  
     const [creds,setCreds] = useState(0);
   
@@ -23,7 +23,7 @@ const Navhome = () => {
        <Nav.Link className='navlink' href="#mid2">Coach</Nav.Link>
        <Nav.Link className='navlink' href="#bot">My sessions</Nav.Link>
        </Nav>
-       <p>Your Credits: <span>{creds}</span></p>
+       <p>Your Credits: <span>{props.creds}</span></p>
        </Navbar.Collapse>
        </Navbar>
        </div>

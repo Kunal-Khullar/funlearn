@@ -45,6 +45,9 @@ const Doubt = () => {
               <Button
                 onClick={() => {
                   history.push("/profile/" + user.email);
+                  db.collection(localStorage.getItem("currentUser")).doc('profile').update({
+                    "creds":10
+                  })
                 }}
                 className="mybtn"
               >
