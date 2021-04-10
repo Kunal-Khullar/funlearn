@@ -129,7 +129,7 @@ const Home = () => {
           <AskForm />
         </Modal.Body>
       </Modal>
-      <Navhome />
+      <Navhome creds={coach} />
       <div className="profile_section" id="top">
         <Row>
           <Col
@@ -151,7 +151,7 @@ const Home = () => {
                 Field of Interest :<h6>{field}</h6>
               </h5>
               <h5>
-                Doubts Solved :<h6>{coach}</h6>
+                Doubts Solved :<h6>0</h6>
               </h5>
               <h5>
                 Video id:<h6>{socketId}</h6>
