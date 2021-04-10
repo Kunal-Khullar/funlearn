@@ -4,9 +4,17 @@ import { Form, Button } from "react-bootstrap";
 import { fireapp, auth, db } from "../../firebase";
 import { UserContext } from "../../context/UserContext";
 const AskForm = () => {
+
+
+
+  // The first commit of Material-UI
+const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
   const [topic, setTopic] = useState("");
   const [description, setDescription] = useState("");
   const [preferences, setPreferences] = useState("");
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+  }
   const { user } = useContext(UserContext);
   const submitDoubt = async () => {
     try {
@@ -24,10 +32,12 @@ const AskForm = () => {
     } catch (err) {
       console.log(err);
     }
-  };
+  
+}
   return (
     <div>
       {" "}
+     
       <Form className="form-container">
         <Form.Group controlId="formName">
           <Form.Label>Topic</Form.Label>
@@ -72,6 +82,6 @@ const AskForm = () => {
       </Form>
     </div>
   );
-};
+          }
 
 export default AskForm;

@@ -10,6 +10,14 @@ import Doubt from "../../components/alldoubts/Doubt";
 import { useHistory } from "react-router-dom";
 import { io } from "socket.io-client";
 import { UserContext } from "../../context/UserContext";
+import 'date-fns';
+import Grid from '@material-ui/core/Grid';
+import DateFnsUtils from '@date-io/date-fns';
+import {
+  MuiPickersUtilsProvider,
+  KeyboardTimePicker,
+  KeyboardDatePicker,
+} from '@material-ui/pickers';
 const socket = io("http://localhost:5000");
 
 AOS.init();
@@ -25,6 +33,15 @@ const Home = () => {
   const [coach, setCoach] = useState(0);
   const [rating, setRating] = useState(null);
   const [socketId, setSocketId] = useState("");
+  const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
+
+  const [time,setTime]=useState("");
+  const [date,setDate]=useState("");
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+    console.log(date);
+    console.log(Date.now())
+  }
   useEffect(() => {
     socket.on("me", (id) => setSocketId(id));
   }, []);
@@ -56,6 +73,33 @@ const Home = () => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
+        <MuiPickersUtilsProvider utils={DateFnsUtils}>
+      <Grid container justify="space-around">
+        <KeyboardDatePicker
+          disableToolbar
+          variant="inline"
+          format="MM/dd/yyyy"
+          margin="normal"
+          id="date-picker-inline"
+          label="Date picker inline"
+          value={selectedDate}
+          onChange={handleDateChange}
+          KeyboardButtonProps={{
+            'aria-label': 'change date',
+          }}
+        />
+        <KeyboardTimePicker
+          margin="normal"
+          id="time-picker"
+          label="Time picker"
+          value={selectedDate}
+          onChange={handleDateChange}
+          KeyboardButtonProps={{
+            'aria-label': 'change time',
+          }}
+        />
+      </Grid>
+    </MuiPickersUtilsProvider>
           <Doubt />
         </Modal.Body>
       </Modal>
@@ -120,61 +164,31 @@ const Home = () => {
             data-aos-duration="1000"
             data-aos-easing="ease-in-out-cubic"
           >
-            <h2>Reviews</h2>
-            <h5>Rating : {rating}</h5>
+           
+            <h5>Your Sessions{rating}</h5>
             <div className="feedback">
               <Carousel>
                 <Carousel.Item>
                   <div className="allfeed">
-                    <h3>User Name</h3>
+                    <h3>Date</h3>
                     <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it to make a
-                      type specimen book. It has survived not only five
-                      centuries, but also the leap into electronic typesetting,
-                      remaining essentially unchanged. It was popularised in the
-                      1960s with the release of Letraset sheets containing Lorem
-                      Ipsum passages, and more recently with desktop publishing
-                      software like Aldus PageMaker including versions of Lorem
-                      Ipsum.
+                     Topic
                     </p>
                   </div>
                 </Carousel.Item>
                 <Carousel.Item>
                   <div className="allfeed">
-                    <h3>User Name</h3>
+                    <h3>Date</h3>
                     <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it to make a
-                      type specimen book. It has survived not only five
-                      centuries, but also the leap into electronic typesetting,
-                      remaining essentially unchanged. It was popularised in the
-                      1960s with the release of Letraset sheets containing Lorem
-                      Ipsum passages, and more recently with desktop publishing
-                      software like Aldus PageMaker including versions of Lorem
-                      Ipsum.
+                      Topic
                     </p>
                   </div>
                 </Carousel.Item>
                 <Carousel.Item>
                   <div className="allfeed">
-                    <h3>User Name</h3>
+                    <h3>Date</h3>
                     <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it to make a
-                      type specimen book. It has survived not only five
-                      centuries, but also the leap into electronic typesetting,
-                      remaining essentially unchanged. It was popularised in the
-                      1960s with the release of Letraset sheets containing Lorem
-                      Ipsum passages, and more recently with desktop publishing
-                      software like Aldus PageMaker including versions of Lorem
-                      Ipsum.
+                     Topic
                     </p>
                   </div>
                 </Carousel.Item>

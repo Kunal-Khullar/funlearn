@@ -47,7 +47,7 @@ background: snow; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safa
     border:inherit
 }
 .allfeed{
-    height:55vh;
+    height:25vh;
     background:#35375E;
    
     
@@ -63,6 +63,7 @@ background: snow; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safa
     display:none !important;
 }
 #right{
+    padding-top: 15vh;
     padding-left: 4rem;
 }
 .allfeed h3{
