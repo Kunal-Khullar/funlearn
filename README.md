@@ -17,15 +17,16 @@ Stuck with doubts? Don't know where to go? LearnToTeach is the perfect destinati
 We used react and WebRTC to get video conferencing for the website. Backend is made using firebase. Deployment is done using firebase.
 
 ## Tech
-- WebRTC
-- Socket.io
 - React
 - Nodejs
+- JavaScript
+- Firebase
+- WebRTC
+- Socket.io
 - Simple-peer
 - CSS
 - HTML
-- JavaScript
-- Firebase
+
 
 ## Contributors
 Team Name- ReduxREACTions
