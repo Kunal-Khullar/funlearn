@@ -1,0 +1,25 @@
+.navlink{
+    margin-left: 10vh;
+   
+}
+.navbar-light .navbar-nav .nav-link{
+    color: white;
+}
+.navbar{
+    background-color: #35375E;
+    
+}
+.navbar-light .navbar-brand{
+    color: white;
+}
+.navbar-collapse{
+    align-items: baseline
+}
+.navbar p{
+    /* font-size: 1.2rem; */
+    color: white;
+    margin-top: .6rem;
+    font-family: 'Varela Round';
+    /* height: 3rem; */
+ 
+}

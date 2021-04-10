@@ -1,0 +1,27 @@
+.dout p{
+color: #35375E;
+text-align: justify;
+padding-right: 1.5rem;
+}
+.dout{
+    padding: 0.8rem 3rem 1rem 3rem;
+    box-shadow: 0.6px 0.6px 9px -3px;
+    margin: 1rem 0.5rem 3.4rem 0.5rem;
+    margin-top: 1rem;
+    border-radius: .71rem;
+}
+.dout h4{
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: #35375E;
+    font-family: 'Varela Round';
+   margin-left: 25rem;
+   margin-top: 1.5rem;
+}
+.dout h2{
+    font-family: 'Poppins';
+    padding: 0.6rem;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: black;
+}

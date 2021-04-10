@@ -1,29 +1,21 @@
 import React,{useState} from 'react'
 import Navhome from '../../components/navbar/Navhome'
 import './home.css'
-import {db} from '../../firebase'
+
 import AskForm from '../../components/ask/AskForm'
 import {Row,Col, Button,Modal,Carousel} from 'react-bootstrap'
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Doubt from '../../components/alldoubts/Doubt'
+// import Doubt from '../../components/alldoubts/Doubt'
 AOS.init();
 const Home = () => {
-   
     const [lgShow, setLgShow] = useState(false);
     const [lgShow2, setLgShow2] = useState(false);
     const [user_name,setName] = useState("Kunal Khullar");
     const [edu,setEdu] = useState("Bachelor's");
     const [field,setField] = useState("Web Development");
-    const [coach,setCoach] = useState(null)
-    const [rating,setRating] = useState(null)
-    db.collection(localStorage.getItem("currentUser")).doc('profile').get().then(function(doc){
-        setName(doc.data().name)
-        setEdu(doc.data().qualify)
-        setField(doc.data().interest)
-        setCoach(doc.data().creds)
-        setRating(doc.data().rating)
-    })
+    const [coach,setCoach] = useState(0)
+    const [rating,setRating] = useState(4)
     return (
         <div>
             <Modal
@@ -36,13 +28,12 @@ const Home = () => {
       >
         <Modal.Header closeButton>
           <Modal.Title id="example-modal-sizes-title-lg">
-          All Queries
-         
+            Submit your doubt
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        <Doubt/>
         
+          <AskForm />
 
         </Modal.Body>
       </Modal>
@@ -56,12 +47,12 @@ const Home = () => {
       >
         <Modal.Header closeButton>
           <Modal.Title id="example-modal-sizes-title-lg">
-          Submit your doubt
+            All Queries
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        <AskForm />
-    
+        
+       {/* <Doubt/> */}
 
         </Modal.Body>
       </Modal>
@@ -136,7 +127,7 @@ const Home = () => {
                     <Col className="rights">
                       <h2>Ready to ask?</h2>
                       <p>Just post your doubt providing the relevant information and one of the volunteers will contact you about that.</p>
-                      <Button onClick={setLgShow2} className="mybtn2">Go ahead</Button>
+                      <Button onClick={setLgShow} className="mybtn2">Go ahead</Button>
                     </Col>
                    
                 </Row>
@@ -152,7 +143,7 @@ const Home = () => {
                     <Col className="rights">
                       <h2>Answer a doubt</h2>
                       <p>From a wide list of doubts, go for the one that is relevant to your field and drop the time you are free and a live session will be scheduled.</p>
-                      <Button onClick={setLgShow} className="mybtn2">Go ahead</Button>
+                      <Button onClick={setLgShow2} className="mybtn2">Go ahead</Button>
                     </Col>
                    
                 </Row>
