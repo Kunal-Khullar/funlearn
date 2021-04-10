@@ -1,56 +1,52 @@
-import React,{useState} from 'react'
-import './doubt.css'
-import {Row,Col,Button} from 'react-bootstrap'
+import React, { useState, useEffect } from "react";
+import "./doubt.css";
+import { Row, Col, Button } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { db } from "../../firebase";
+
 AOS.init();
 const Doubt = () => {
-    return (
-        <div>
-            <div className="doubt_container">
-                <div className="dout">
-                    <Row>
-                        <h2>Topics</h2>
-                        <h4>USername</h4>
-                    </Row>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-
-                    </p>
-                    <Button className="mybtn">Contact</Button>
-                </div>
-                <div className="dout">
-                    <Row>
-                        <h2>Topics</h2>
-                        <h4>USername</h4>
-                    </Row>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-
-                    </p>
-                    <Button className="mybtn">Contact</Button>
-                </div>
-                <div className="dout">
-                    <Row>
-                        <h2>Topics</h2>
-                        <h4>USername</h4>
-                    </Row>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-
-                    </p>
-                    <Button className="mybtn">Contact</Button>
-                </div>
-                <div className="dout">
-                    <Row>
-                        <h2>Topics</h2>
-                        <h4>USername</h4>
-                    </Row>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-
-                    </p>
-                    <Button className="mybtn">Contact</Button>
-                </div>
+  const [loading, setLoading] = useState(true);
+  const [doubts, setDoubts] = useState([]);
+  useEffect(() => {
+    (async () => {
+      try {
+        const query = await db.collection("doubts").get();
+        const doubts_copy = [];
+        query.forEach((doc) => {
+          doubts_copy.push(doc.data());
+        });
+        setDoubts(doubts_copy);
+        setLoading(false);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, []);
+  if (loading) {
+    return <div />;
+  }
+  return (
+    <div>
+      <div className="doubt_container">
+        {doubts.map((ele) => {
+          return (
+            <div className="dout">
+              <Row>
+                <h2>{ele.topic}</h2>
+                <h4>{ele.uid}</h4>
+              </Row>
+              <p>{ele.description}</p>
+              <Button onClick={() => {}} className="mybtn">
+                Contact
+              </Button>
             </div>
-        </div>
-    )
-}
+          );
+        })}
+      </div>
+    </div>
+  );
+};
 
-export default Doubt
+export default Doubt;

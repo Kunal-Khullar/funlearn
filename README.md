@@ -1,5 +1,5 @@
 # LearnToTeach
-
+<a href="https://hack36.com"> <img src="http://bit.ly/BuiltAtHack36" height=20px> </a>
 ## Index
 
 1. [About LearnToTeach](#about-makeathon)
