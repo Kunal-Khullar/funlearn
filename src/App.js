@@ -1,9 +1,10 @@
 import React from 'react'
-import Landing from './pages/landing/Landing'
+import Landing from './pages/landing/Landing' 
+import Navigator from './routes/Navigator'
 function App() {
   return (
     <div className="App">
-      <Landing />
+      <Navigator />
     </div>
   );
 }

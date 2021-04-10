@@ -24,8 +24,7 @@ const Mynav = () => {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-         {/* <Login></Login> */}
-         {/* <Register/> */}
+    <Login/>
           </Modal.Body>
         </Modal>
        <Navbar className="navbar" bg="clear" expand="lg">
@@ -37,7 +36,7 @@ const Mynav = () => {
        <Nav.Link className='navlink' href="#mid">Services</Nav.Link>
        <Nav.Link className='navlink' href="#bot">How It Works?</Nav.Link>
        </Nav>
-       <Button onClick={setLgShow(true)}variant="outline-light">Log In</Button>
+       <Button onClick={()=>setLgShow(true)}variant="outline-light">Log In</Button>
        </Navbar.Collapse>
        </Navbar>
        </div>
