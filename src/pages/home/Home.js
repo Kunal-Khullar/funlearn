@@ -178,20 +178,20 @@ const Home = () => {
               <Carousel>
                 <Carousel.Item>
                   <div className="allfeed">
-                    <h3>Date</h3>
-                    <p>Topic</p>
+                    <h3>11th April</h3>
+                    <p>Mathematics</p>
                   </div>
                 </Carousel.Item>
                 <Carousel.Item>
                   <div className="allfeed">
-                    <h3>Date</h3>
-                    <p>Topic</p>
+                    <h3>24th April</h3>
+                    <p>Chemistry</p>
                   </div>
                 </Carousel.Item>
                 <Carousel.Item>
                   <div className="allfeed">
-                    <h3>Date</h3>
-                    <p>Topic</p>
+                    <h3>18th April</h3>
+                    <p>Data Structures</p>
                   </div>
                 </Carousel.Item>
               </Carousel>
