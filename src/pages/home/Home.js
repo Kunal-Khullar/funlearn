@@ -6,7 +6,7 @@ import AskForm from '../../components/ask/AskForm'
 import {Row,Col, Button,Modal,Carousel} from 'react-bootstrap'
 import AOS from "aos";
 import "aos/dist/aos.css";
-// import Doubt from '../../components/alldoubts/Doubt'
+import Doubt from '../../components/alldoubts/Doubt'
 AOS.init();
 const Home = () => {
     const [lgShow, setLgShow] = useState(false);
@@ -33,7 +33,7 @@ const Home = () => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        {/* <Doubt/> */}
+        <Doubt/>
         
 
         </Modal.Body>
@@ -128,7 +128,7 @@ const Home = () => {
                     <Col className="rights">
                       <h2>Ready to ask?</h2>
                       <p>Just post your doubt providing the relevant information and one of the volunteers will contact you about that.</p>
-                      <Button onClick={setLgShow} className="mybtn2">Go ahead</Button>
+                      <Button onClick={setLgShow2} className="mybtn2">Go ahead</Button>
                     </Col>
                    
                 </Row>
@@ -144,7 +144,7 @@ const Home = () => {
                     <Col className="rights">
                       <h2>Answer a doubt</h2>
                       <p>From a wide list of doubts, go for the one that is relevant to your field and drop the time you are free and a live session will be scheduled.</p>
-                      <Button onClick={setLgShow2} className="mybtn2">Go ahead</Button>
+                      <Button onClick={setLgShow} className="mybtn2">Go ahead</Button>
                     </Col>
                    
                 </Row>
