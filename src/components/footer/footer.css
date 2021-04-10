@@ -1,0 +1,11 @@
+.footer{
+    height:20vh;
+    background: 
+    rgb(47, 47, 47);
+}
+.footer p{
+    color: snow;
+    font-size: 1.6rem;font-family: "Varela";
+    text-align: center;
+    padding-top: 3rem;
+}

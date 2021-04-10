@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Mynav from "../../components/navbar/Mynav";
 import "./landing.css";
 import { Row, Col, Button, Modal } from "react-bootstrap";
-
+import Footer from '../../components/footer/Footer'
 const Landing = () => {
   return (
     
@@ -92,7 +92,7 @@ const Landing = () => {
           </Col>
         </Row>
       </div>
-     
+     <Footer></Footer>
      
     </div>
   );
