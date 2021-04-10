@@ -1,8 +1,8 @@
 import React,{useState} from "react";
 import "./login.css";
 import { Form, Button } from "react-bootstrap";
-// import {fireapp,auth,db} from '../../firebase'
 import {useHistory } from 'react-router-dom'
+import {fireapp,auth,db} from '../../firebase'
 const Login = () => {
  
   var uid="";
@@ -10,8 +10,29 @@ const Login = () => {
   const [logemail,setLogEmail] = useState("")
   const [logpass,setLogPass] = useState("")
   const loginuser = async () =>{
-    console.log(logemail,logpass)
-  }
+    if(logemail!=""&&logpass!="")
+      {
+          try {
+              if (await auth.signInWithEmailAndPassword(logemail,logpass)) {
+                  var user = fireapp.auth().currentUser;
+                  if (user != null) {
+                      uid = user.email;
+                      localStorage.setItem("currentUser", uid);
+                      
+                      
+                      console.log(localStorage.getItem("currentUser"))
+                      history.push("/home")
+                  }
+              }
+          } catch (error) {
+              alert(error)
+          }
+      }
+      else
+      {
+        alert("Please enter all the fields")
+      }
+    }
   return (
     <div>
       <Form className="form-container">

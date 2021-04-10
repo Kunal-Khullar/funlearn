@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import "./register.css";
 import { Form, Button } from "react-bootstrap";
-// import {fireapp,auth,db} from '../../firebase'
+
 const Register = () => {
   console.log("gg")
     const [name1,setName]=useState("")
@@ -15,7 +15,8 @@ const Register = () => {
     console.log("clicked")
     }
   return (
-    <div> <Form className="form-container">
+    <div> 
+      <Form className="form-container">
             <Form.Group controlId="formName">
           <Form.Label>Name</Form.Label>
           <Form.Control value={name1} onChange={(e)=>{setName(e.target.value)}} type="text" />
