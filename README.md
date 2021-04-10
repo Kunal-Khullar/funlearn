@@ -26,9 +26,10 @@ We used react and WebRTC to get video conferencing for the website. Backend is m
 - Simple-peer
 - CSS
 - HTML
-
+##PPT
 [PPT](https://docs.google.com/presentation/d/1185qd6dXBvKWW2RGDvv3y92uS69ZwgGEuWPLJkELW5E/edit?usp=sharing) 
-
+##Video
+[Video](https://drive.google.com/file/d/1j0BRzlQqAKDXUdCQ0Pfl5WGUn1_tJ2YS/view?usp=sharing)
 ## Contributors
 Team Name- Redux_REACTions
 - [Divanshu Agarwal](https://github.com/divanshurox)
