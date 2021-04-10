@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import './navbar.css'
+import Login from '../login/Login'
 const Mynav = () => {
  
   const [lgShow, setLgShow] = useState(false);
@@ -36,7 +37,7 @@ const Mynav = () => {
        <Nav.Link className='navlink' href="#mid">Services</Nav.Link>
        <Nav.Link className='navlink' href="#bot">How It Works?</Nav.Link>
        </Nav>
-       <Button variant="outline-light">Log In</Button>
+       <Button onClick={setLgShow(true)}variant="outline-light">Log In</Button>
        </Navbar.Collapse>
        </Navbar>
        </div>
