@@ -1,15 +1,8 @@
 import React, { useState } from "react";
 import "./register.css";
 import { Form, Button } from "react-bootstrap";
-<<<<<<< HEAD
-// import {fireapp,auth,db} from '../../firebase'
-const abc = () =>{
-  
-}
-=======
 import { fireapp, auth, db } from "../../firebase";
 import { useHistory } from "react-router-dom";
->>>>>>> 491af5c09718c5335c9ad6474e66169da9aa7137
 const Register = () => {
   const history = useHistory();
   const [name1, setName] = useState("");

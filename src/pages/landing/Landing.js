@@ -7,7 +7,7 @@ import Footer from "../../components/footer/Footer";
 // import Login from '../../components/login/Login'
 import { fireapp, auth, db } from "../../firebase";
 import { Row, Col, Button, Modal } from "react-bootstrap";
-import AOS from "aos";
+import AOS from 'aos'
 import "aos/dist/aos.css";
 AOS.init();
 const Landing = () => {

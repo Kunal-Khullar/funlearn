@@ -28,13 +28,12 @@ const Home = () => {
       >
         <Modal.Header closeButton>
           <Modal.Title id="example-modal-sizes-title-lg">
-          All Queries
-         
+            Submit your doubt
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        {/* <Doubt/> */}
         
+          <AskForm />
 
         </Modal.Body>
       </Modal>
@@ -48,12 +47,12 @@ const Home = () => {
       >
         <Modal.Header closeButton>
           <Modal.Title id="example-modal-sizes-title-lg">
-          Submit your doubt
+            All Queries
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        <AskForm />
-    
+        
+       {/* <Doubt/> */}
 
         </Modal.Body>
       </Modal>
