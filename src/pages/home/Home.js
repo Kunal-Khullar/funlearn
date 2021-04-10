@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import Navhome from '../../components/navbar/Navhome'
 import './home.css'
-
+import {db} from '../../firebase'
 import AskForm from '../../components/ask/AskForm'
 import {Row,Col, Button,Modal,Carousel} from 'react-bootstrap'
 import AOS from "aos";
@@ -9,13 +9,21 @@ import "aos/dist/aos.css";
 import Doubt from '../../components/alldoubts/Doubt'
 AOS.init();
 const Home = () => {
+   
     const [lgShow, setLgShow] = useState(false);
     const [lgShow2, setLgShow2] = useState(false);
     const [user_name,setName] = useState("Kunal Khullar");
     const [edu,setEdu] = useState("Bachelor's");
     const [field,setField] = useState("Web Development");
-    const [coach,setCoach] = useState(0)
-    const [rating,setRating] = useState(4)
+    const [coach,setCoach] = useState(null)
+    const [rating,setRating] = useState(null)
+    db.collection(localStorage.getItem("currentUser")).doc('profile').get().then(function(doc){
+        setName(doc.data().name)
+        setEdu(doc.data().qualify)
+        setField(doc.data().interest)
+        setCoach(doc.data().creds)
+        setRating(doc.data().rating)
+    })
     return (
         <div>
             <Modal
