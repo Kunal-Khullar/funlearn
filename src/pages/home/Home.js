@@ -13,6 +13,7 @@ import { UserContext } from "../../context/UserContext";
 import "date-fns";
 import Grid from "@material-ui/core/Grid";
 import DateFnsUtils from "@date-io/date-fns";
+import Footer from '../../components/footer/Footer'
 import {
   MuiPickersUtilsProvider,
   KeyboardTimePicker,
@@ -45,7 +46,7 @@ const Home = () => {
     console.log(Date.now());
   };
   const updateSocketId = async (id) => {
-    await db.collection(user.email).doc("profile").update({ socketId: id });
+    await db.collection(localStorage.getItem("currentUser")).doc("profile").update({ socketId: id });
   };
   useEffect(() => {
     socket.on("me", (id) => {
@@ -252,7 +253,9 @@ const Home = () => {
             </Button>
           </Col>
         </Row>
+    
       </div>
+      <Footer></Footer>
     </div>
   );
 };
