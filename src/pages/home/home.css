@@ -47,7 +47,7 @@ background: snow; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safa
     border:inherit
 }
 .allfeed{
-    height:25vh;
+    height:25vh !important;
     background:#35375E;
    
     
